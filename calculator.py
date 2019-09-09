@@ -6,15 +6,26 @@ def check_HDL(HDL_result):
     else:
         return "low"
 
+def cholestoral_interface():
+    print("Cholesterol_check")
+    chol_input = input("Enter your cholestoral test result: ")
+    chol_data = chol_input.split("=")
+    if chol_data[0] == "HDL":
+        result = check_HDL(int(chol_data[1]))
+        print("The result is {}".format(result))
+
 def interface():
     print("My calculator program")
     keep_running = True
     while keep_running:
         print("Option: ")
+        print("1 - Cholesterol_check")
         print("9 - Quit")
         choice = input("Enter your choice: ")
         if choice == '9':
             keep_running = False
+        elif choice == "1":
+            cholestoral_interface()
     return
 
 if __name__ == "__main__":
