@@ -20,6 +20,10 @@ def cholestoral_interface():
     print("Cholesterol_check")
     chol_input = input("Enter your cholestoral test result: ")
     chol_data = chol_input.split("=")
+    if chol_data[0] in ["LDL", "HDL", "TLC"]:
+        print("Good input")
+    else:
+        print("bad input")
     if chol_data[0] == "HDL":
         result = check_HDL(int(chol_data[1]))
         print("The result is {}".format(result))
